@@ -1,5 +1,18 @@
+on script load:
+	set {colors::*} to "black", "dark_blue", "dark_green", "dark_aqua", "dark_red", "dark_purple", "gold", "gray", "dark_gary", "blue" , "green", "aqua", "red", "light_purple", "yellow", "white"
+    loop {colors::*}:
+        make player run command "scoreboard teams add cg.%loop-value%" as op"
+        make player run command "scoreboard teams option cg.%loop-value% color %loop-value%"          
+
 command /glowsk [<string>]:
     trigger:
         if arg 1 is "on":
             set {glow.ison.%uuid of player%} to true
-        if 
+        if arg 1 is "off::
+            set {glow.ison.%uuid of player%} to false
+        loop {colors::*}:
+            if arg-1 is loop-value-1:
+                loop {colors::*}:
+                    make player run command "scoreboard teams leave cg.%loop-value-2% %player%" as op
+                make player run command "scoreboard teams join cg.%arg-1% %player%" as op
+                
