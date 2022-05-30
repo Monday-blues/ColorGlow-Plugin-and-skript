@@ -8,8 +8,10 @@ command /glowsk [<string>]:
     trigger:
         if arg 1 is "on":
             set {glow.ison.%uuid of player%} to true
+            apply glowing to player for 9999 days
         if arg 1 is "off::
             set {glow.ison.%uuid of player%} to false
+            remove glowing from player
         loop {colors::*}:
             if arg-1 is loop-value-1:
                 loop {colors::*}:
